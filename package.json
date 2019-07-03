@@ -12,10 +12,12 @@
   "author": "Luis Felipe Evilla <http://www.github.com/luisFelipeEvilla>",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-graphql": "^0.8.0",
     "graphql": "^14.4.1",
-    "graphql-tools": "^4.0.5"
+    "graphql-tools": "^4.0.5",
+    "mongodb": "^3.2.7"
   },
   "devDependencies": {
     "nodemon": "^1.19.1",
