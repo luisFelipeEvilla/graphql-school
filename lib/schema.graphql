@@ -1,10 +1,18 @@
+"Validate levels types"
+enum Level {
+    begginner,
+    intermediate,
+    advanced
+}
+
 type Course {
     _id: ID!,
     title: String!,
     teacher: String,
     description: String!,
     topic: String,
-    people: [Student]
+    people: [Student],
+    level: Level
 }
 
 type Student {
