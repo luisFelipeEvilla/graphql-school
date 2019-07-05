@@ -11,6 +11,8 @@ interface Person {
     email: String!
 }
 
+union GlobalSearch = Course | Student | Monitor
+
 type Course {
     _id: ID!,
     title: String!,
@@ -72,6 +74,8 @@ type Query {
     getPersons: [Person]
     "return a Person"
     getPerson(id: ID!): Person
+    "Execute a global search"
+    searchItem(keyword: String!): [GlobalSearch] 
 }
 
 type Mutation {
@@ -80,7 +84,7 @@ type Mutation {
     "Edit a course"
     editCourse(id: ID!, input: EditCourseInput!): Course
     "Delete a Course"
-    deleteCourse(id: ID!): Course
+    deleteCourse(id: ID!): Boolean
     "Add People to a course"
     addPeople(CourseID: ID!, PeopleID: ID!): Course
     "create a student"
@@ -88,5 +92,5 @@ type Mutation {
     "Edit a Person"
     editPerson(id: ID!, input: EditPersonInput): Person
     "Delete a Person"
-    deletePerson(id: ID!): Person
+    deletePerson(id: ID!): Boolean
 }
