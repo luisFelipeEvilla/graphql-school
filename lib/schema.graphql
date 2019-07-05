@@ -21,17 +21,6 @@ type Student {
     email: String!
 }
 
-type Query {
-    "return all courses"
-    getCourses: [Course]
-    "return a course"
-    getCourse(id: ID!): Course
-    "return all students"
-    getStudents: [Student]
-    "return a Student"
-    getStudent(id: ID!): Student
-}
-
 input CourseInput {
     title: String!,
     teacher: String,
@@ -56,15 +45,30 @@ input EditStudentInput {
     email: String
 }
 
+type Query {
+    "return all courses"
+    getCourses: [Course]
+    "return a course"
+    getCourse(id: ID!): Course
+    "return all students"
+    getStudents: [Student]
+    "return a Student"
+    getStudent(id: ID!): Student
+}
+
 type Mutation {
     "Create a course" 
     createCourse(input: CourseInput!): Course
     "Edit a course"
     editCourse(id: ID!, input: EditCourseInput!): Course
+    "Delete a Course"
+    deleteCourse(id: ID!): Course
     "Add People to a course"
     addPeople(CourseID: ID!, PeopleID: ID!): Course
     "create a student"
     createStudent(input: StudentInput!): Student
     "Edit a student"
     editStudent(id: ID!, input: EditStudentInput): Student
+    "Delete a Student"
+    deleteStudent(id: ID!): Student
 }
