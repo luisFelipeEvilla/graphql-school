@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "nodemon -e js,graphql index",
     "lint": "standard",
-    "lint-fix": "standar -- -fix"
+    "lint-fix": "standard -- -fix"
   },
   "keywords": [],
   "author": "Luis Felipe Evilla <http://www.github.com/luisFelipeEvilla>",
